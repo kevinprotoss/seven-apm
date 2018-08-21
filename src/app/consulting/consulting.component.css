@@ -1,0 +1,13 @@
+.w-23 {
+    width: 23% !important;
+}
+
+.font-8p {
+    font-size: 8px
+}
+
+.overflow {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,29 @@
+#site-footer {
+    background-size: cover;
+    /*margin-top: 5em;*/
+}
+
+.hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	margin: 8px 0px;
+}
+.hr-sect::before {
+    content: "";
+	flex-grow: 1;
+    background-image: linear-gradient(to right, white, #ffff6a);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 30px;
+}
+.hr-sect::after {
+	content: "";
+	flex-grow: 1;
+    background-image: linear-gradient(to left, white, #ffff6a);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 30px;
+}

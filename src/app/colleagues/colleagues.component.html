@@ -1,0 +1,119 @@
+<section id="colleague-list">
+  <div class="w-70 mx-auto mt-5 mb-5 d-flex flex-column">
+    <div class="input-group">
+      <input class="form-control border border-warning" placeholder="输入关键字">
+      <span class="input-group-append">
+        <button class="btn btn-outline-warning" type="button">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+      </span>
+    </div>
+    <div class="mt-1 ml-1 text-black-50">
+      <span>
+        <b>热门搜索</b> 帕森斯设计学院 | 罗德岛设计学院 | 中央圣马丁&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>学历</b> 全部 本科 研究生
+      </span>
+    </div>
+  </div>
+  <div class="w-70 mx-auto mt-5 mb-7 d-flex flex-column">
+    <div class="w-80 mx-auto d-flex flex-row justify-content-around">
+      <div class="text-center">
+        美国<br>
+        UNITED STATES
+      </div>
+      <div class="text-center">
+        英国<br>
+        UNITED KINDOM
+      </div>
+      <div class="text-center">
+        其他<br>
+        OTHERS
+      </div>
+    </div>
+    <hr class="mb-0 border-warning">
+    <div>
+      <img class="w-100" src="./assets/img/colleagues/map/usa.png"/>
+    </div>
+    <div class="d-flex flex-column">
+      <div *ngFor="let colleague of colleagues" class="d-flex flex-column">
+        <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
+          <div class="mr-3 w-40">
+            <img src="./assets/img/colleagues/parsons.jpg" class="w-100"/>
+          </div>
+          <div class="ml-3">
+            申请难度：一般<br>
+            留学预算：$42030 / 平均奖学金$27,982<br>
+            语言成绩：托福92 / 雅思7.0<br>
+            申请截止：早申11月1日 / 常规1月15日<br>
+            优质专业：室内设计 / 服装设计 / 插画设计...
+          </div>
+          <div class="w-100 mt-2 d-flex justify-content-end">
+            <button type="button" class="btn btn-light rounded-0">了解申请流程</button>
+            <button type="button" class="ml-2 btn btn-light rounded-0">获取留学方案</button>
+          </div>
+        </div>
+        <hr class="divider">
+        <span>{{colleague.id}}</span>
+      </div>
+      <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
+        <div class="mr-3 w-40">
+          <img src="./assets/img/colleagues/parsons.jpg" class="w-100"/>
+        </div>
+        <div class="ml-3">
+          申请难度：一般<br>
+          留学预算：$42030 / 平均奖学金$27,982<br>
+          语言成绩：托福92 / 雅思7.0<br>
+          申请截止：早申11月1日 / 常规1月15日<br>
+          优质专业：室内设计 / 服装设计 / 插画设计...
+        </div>
+        <div class="w-100 mt-2 d-flex justify-content-end">
+          <button type="button" class="btn btn-light">了解申请流程</button>
+          <button type="button" class="ml-2 btn btn-light">获取留学方案</button>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
+        <div class="mr-3 w-40">
+          <img src="./assets/img/colleagues/st martins.jpg" class="w-100"/>
+        </div>
+        <div class="ml-3">
+          申请难度：困难<br>
+          留学预算：$15180 / 平均奖学金$2,000<br>
+          语言成绩：托福N/A / 雅思6.0<br>
+          申请截止：1月15日<br>
+          优质专业：室内设计 / 服装设计 / 插画设计 / 平面设计...
+        </div>
+        <div class="w-100 mt-2 d-flex justify-content-end">
+          <button type="button" class="btn btn-light">了解申请流程</button>
+          <button type="button" class="ml-2 btn btn-light">获取留学方案</button>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
+        <div class="mr-3 w-40">
+          <img src="./assets/img/colleagues/rhode.jpg" class="w-100"/>
+        </div>
+        <div class="ml-3">
+          申请难度：困难<br>
+          留学预算：$45530 / 平均奖学金$25,412<br>
+          语言成绩：托福93 / 雅思6.5<br>
+          申请截止：早申11月1日 / 常规2月1日<br>
+          优质专业：工业设计 / 平面设计 / 多媒体设计 / 建筑设计...
+        </div>
+        <div class="w-100 mt-2 d-flex justify-content-end">
+          <button type="button" class="btn btn-light">了解申请流程</button>
+          <button type="button" class="ml-2 btn btn-light">获取留学方案</button>
+        </div>
+      </div>
+      <hr class="divider">
+    </div>
+    <div class="mt-4 d-flex flex-row flex-wrap justify-content-end">
+      <span class="dot d-inline mx-4 bg-dark active">1</span>
+      <span class="dot d-inline mx-4 bg-dark">2</span>
+      <span class="dot d-inline mx-4 bg-dark">3</span>
+      <span class="dot d-inline mx-4 bg-dark">4</span>
+    </div>
+  </div>
+</section>
+<!-- colleague list -->
+<app-promotions></app-promotions>

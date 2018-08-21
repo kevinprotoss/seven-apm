@@ -1,0 +1,26 @@
+.font-8p {
+    font-size: 8px
+}
+
+.overflow {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin-left: 1em;
+    margin-right: 1em;
+    line-height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active,
+.dot:hover {
+    background-color: orange !important;
+    color: orange !important;
+}

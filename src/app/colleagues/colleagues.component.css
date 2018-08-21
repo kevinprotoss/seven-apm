@@ -1,0 +1,41 @@
+.thumbnail {
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.summary {
+    font-size: 80%;
+    line-height: 200%
+}
+
+.buttons {
+    width: 100%;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-right: 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.button:hover {
+    color: #ffff18;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    line-height: 50px;
+    border-radius: 50%;
+}
+
+.active,
+.dot:hover {
+    background-color: orange !important;
+    color: orange !important;
+}

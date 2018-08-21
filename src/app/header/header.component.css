@@ -1,0 +1,16 @@
+#site-header > div {
+    background-size: cover;
+    min-height: 500px;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.nav-link:hover {
+    color: #ffff18 !important;
+}
+
+.nav-link.active  {
+    border-bottom: 4px solid #e5c13e;
+}
