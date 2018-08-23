@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Major } from '../major';
+import { MajorService } from '../major.service';
 
 @Component({
   selector: 'app-majors',
@@ -6,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./majors.component.css']
 })
 export class MajorsComponent implements OnInit {
-
-  constructor() { }
+  majors$: Observable<Major[]>;
+  
+  constructor(private majorService: MajorService) { }
 
   ngOnInit() {
+    this.majors$ = this.majorService.getMajors();
   }
 
 }

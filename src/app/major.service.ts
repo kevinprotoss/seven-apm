@@ -14,6 +14,10 @@ export class MajorService {
 
   constructor(private http: HttpClient) { }
   
+  getMajors(): Observable<Major[]> {
+    return this.http.get<Major[]>(this.url);
+  }
+  
   getMajor(id: string): Observable<Major> {
     return this.http.get<Major[]>(this.url).pipe(
       map(majors => majors.find(major => major.id === id))
