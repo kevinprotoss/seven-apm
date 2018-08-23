@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { camelCase } from 'lodash';
+import { Observable } from 'rxjs';
+
+import { Major } from '../major';
+import { MajorService } from '../major.service';
 
 @Component({
   selector: 'app-major-detail',
@@ -8,21 +11,13 @@ import { camelCase } from 'lodash';
   styleUrls: ['./major-detail.component.css']
 })
 export class MajorDetailComponent implements OnInit {
-  data: Object = {
-    graphicDesign: {
-      
-    }
-  };
-
-  constructor(private route: ActivatedRoute) { }
+  major$: Observable<Major>;
+  
+  constructor(private route: ActivatedRoute, private majorService: MajorService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      console.log(params.id);
-    });
-    let id = this.route.snapshot.paramMap.get('id');
-    let res = this.data[camelCase(id)];
-    console.log('res', res);
+    const id = this.route.snapshot.paramMap.get('id');
+    this.major$ = this.majorService.getMajor(id);
   }
 
 }
