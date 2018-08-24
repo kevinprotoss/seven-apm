@@ -19,7 +19,7 @@ export class MajorService {
   }
   
   getMajor(id: string): Observable<Major> {
-    return this.http.get<Major[]>(this.url).pipe(
+    return this.getMajors().pipe(
       map(majors => majors.find(major => major.id === id))
     );
   }
