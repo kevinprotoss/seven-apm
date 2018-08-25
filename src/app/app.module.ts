@@ -14,8 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PromotionsComponent } from './promotions/promotions.component';
 import { HeaderComponent } from './header/header.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
-import { ColleaguesComponent } from './colleagues/colleagues.component';
-import { ColleagueDetailComponent } from './colleague-detail/colleague-detail.component';
+import { CollegesComponent } from './colleges/colleges.component';
+import { CollegeDetailComponent } from './college-detail/college-detail.component';
 import { MajorsComponent } from './majors/majors.component';
 import { MajorDetailComponent } from './major-detail/major-detail.component';
 import { ConsultingComponent } from './consulting/consulting.component';
@@ -33,8 +33,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     PromotionsComponent,
     HeaderComponent,
     SafeHtmlPipe,
-    ColleaguesComponent,
-    ColleagueDetailComponent,
+    CollegesComponent,
+    CollegeDetailComponent,
     MajorsComponent,
     MajorDetailComponent,
     ConsultingComponent,

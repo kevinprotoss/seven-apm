@@ -1,8 +1,9 @@
 export class Major {
   id: string;
-  name: string;
-  backgroundImage: string;
+  name: Object;
+  thumbnailUrl: string;
+  bannerUrl: string;
   introduction: string;
   career: string;
-  qa: Array<{question: string, answer: string}>;
+  faqs: Array<{question: string, answer: string}>;
 }
