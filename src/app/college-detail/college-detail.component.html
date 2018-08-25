@@ -29,16 +29,16 @@
           </div>
           <hr class="mx-0 bg-warning">
           <div class="pl-4 mt-4 d-flex flex-column">
-            <a ngx-scroll-to="#bachelor-deadline">截止日期</a>
-            <a ngx-scroll-to="#bachelor-requirements">申请要求</a>
+            <a ngx-scroll-to="#deadline-bachelor">截止日期</a>
+            <a ngx-scroll-to="#requirements-bachelor">申请要求</a>
           </div>
           <div class="pl-4 mt-4 text-warning">
             研究生 MA
           </div>
           <hr class="mx-0 bg-warning">
           <div class="pl-4 mt-4 d-flex flex-column">
-            <a ngx-scroll-to="#master-deadline">截止日期</a>
-            <a ngx-scroll-to="#master-requirements">申请要求</a>
+            <a ngx-scroll-to="#deadline-master">截止日期</a>
+            <a ngx-scroll-to="#requirements-master">申请要求</a>
           </div>
         </div>
         <div *ngIf="activeTab === Tabs.Tuition" class="w-25 pr-5 pt-7 d-flex flex-column">
@@ -97,10 +97,14 @@
               <br><br>
               <h5>本科生</h5>
               <br><br>
-              截止日期<br>
+              <div id="deadline-bachelor">
+                截止日期
+              </div>
               {{college.application.bachelor.deadline}}
               <br><br>
-              申请要求<br>
+              <div id="requirements-bachelor">
+                申请要求
+              </div>
               {{college.application.bachelor.requirement}}
               <br><br>
               帕森斯挑战<br>
@@ -113,10 +117,14 @@
               <br><br>
               <h5>研究生</h5>
               <br><br>
-              截止日期<br>
+              <div id="deadline-master">
+                截止日期
+              </div>
               {{college.application.master.deadline}}
               <br><br>
-              申请要求<br>
+              <div id="requirements-master">
+                申请要求
+              </div>
               {{college.application.master.requirement}}
               <br><br>
               帕森斯挑战<br>
@@ -127,13 +135,15 @@
               <br><br>
             </div>
             <div class="tab-pane" id="tuition" role="tabpanel" aria-labelledby="tuition-tab">
-              预算项目 :
-              <br><br>
-              <div *ngFor="let fee of college.tuition.fees">
-                {{fee.name}} —— {{format(fee.price)}}
+              <div id="fees">
+                预算项目 :
+              </div>
+              <br>
+              <div *ngFor="let fee of college.tuition.formattedFees">
+                {{fee.name}} —— {{fee.price}}
                 <br><br>
               </div>
-              总预算 —— {{format(college.tuition.totalFee)}}
+              总预算 —— {{college.tuition.totalFee}}
               <br><br>
             </div>
           </div>

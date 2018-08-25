@@ -15,7 +15,9 @@ export class CollegeService {
   constructor(private http: HttpClient) { }
   
   getColleges(): Observable<College[]> {
-    return this.http.get<College[]>(this.url);
+    return this.http.get<College[]>(this.url).pipe(
+      map(colleges => colleges.map(data => new College(data)))
+    );
   }
   
   getCollege(id: string): Observable<College> {
