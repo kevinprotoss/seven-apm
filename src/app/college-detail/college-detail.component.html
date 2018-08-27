@@ -1,5 +1,5 @@
 <section id="college-detail">
-  <div *ngIf="(college$ | async) as college; else notFound">
+  <div *ngIf="(college$ | async) as college; else loading">
     <div class="banner" [style.background-image]="'url(./assets/img/header/colleague-detail.jpg)'"></div>
     <div class="w-75 mx-auto d-flex flex-column">
       <div class="mt-5">
@@ -151,9 +151,9 @@
       </div>
     </div>
   </div>
-  <ng-template #notFound>
+  <ng-template #loading>
     <div>
-      很抱歉，未找到此相关专业！
+      加载院校数据。。。
     </div>
   </ng-template>
   

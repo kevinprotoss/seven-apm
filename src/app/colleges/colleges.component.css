@@ -31,11 +31,24 @@
     height: 8px;
     width: 8px;
     line-height: 50px;
-    border-radius: 50%;
 }
 
 .active,
 .dot:hover {
     background-color: orange !important;
     color: orange !important;
+}
+
+.left {
+    border-width: 0 2px 2px 0;
+    padding: 8px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.right {
+    border-width: 0 2px 2px 0;
+    padding: 8px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }

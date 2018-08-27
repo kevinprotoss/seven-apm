@@ -1,5 +1,5 @@
 <section id="major-detail">
-  <div *ngIf="(major$ | async) as major; else notFound">
+  <div *ngIf="(major$ | async) as major; else loading">
     <div class="banner" [style.background-image]="'url(' + major.bannerUrl + ')'"></div>
     <div class="w-70 mx-auto mt-5 mb-7">
       <h4 class="my-3">
@@ -15,14 +15,16 @@
           </h5>
           {{major.career}}
         </div>
-        <div>
-          <h6>
-            热门问答
-          </h6>
-        </div>
-        <div class="mb-5" *ngFor="let faq of major.faqs">
-          Q. {{faq.question}}<br>
-          A. {{faq.answer}}
+        <div *ngIf="major.faqs">
+          <div>
+            <h6>
+              热门问答
+            </h6>
+          </div>
+          <div class="mb-5" *ngFor="let faq of major.faqs">
+            Q. {{faq.question}}<br>
+            A. {{faq.answer}}
+          </div>
         </div>
       </div>
       <div class="mb-7">
@@ -233,9 +235,9 @@
       </div>
     </div>
   </div>
-  <ng-template #notFound>
+  <ng-template #loading>
     <div>
-      很抱歉，未找到此相关专业！
+      加载专业数据。。。
     </div>
   </ng-template>
 </section>

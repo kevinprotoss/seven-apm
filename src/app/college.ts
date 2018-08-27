@@ -70,6 +70,7 @@ class Tuition {
 
 export class College {
   id: string;
+  country: string;
   introduction: string;
   majors: Array<Major>;
   application: object;
@@ -85,6 +86,7 @@ export class College {
 
   constructor(data: any) {
     this.id = data.id;
+    this.country = data.country;
     this.introduction = data.introduction;
     this.majors = data.majors.map(major => new Major(major));
     this.application = data.application;
