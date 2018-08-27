@@ -1,5 +1,5 @@
 .font-8p {
-    font-size: 8px
+    font-size: 8px;
 }
 
 .overflow {
@@ -23,4 +23,10 @@
 .dot:hover {
     background-color: orange !important;
     color: orange !important;
+}
+
+.swiper-pagination {
+    position: static;
+    margin-top: 1rem;
+    float: right;
 }
