@@ -83,6 +83,10 @@ export class College {
   get masterMajors(): Array<Major> {
     return this.majors.filter(major => major.degree === 'master');
   }
+  
+  get popularMajors(): Array<Major> {
+    return this.masterMajors.slice(0, 4);
+  }
 
   constructor(data: any) {
     this.id = data.id;

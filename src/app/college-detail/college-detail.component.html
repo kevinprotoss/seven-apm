@@ -100,18 +100,22 @@
               <div id="deadline-bachelor">
                 截止日期
               </div>
-              {{college.application.bachelor.deadline}}
+              <ng-container *ngIf="college.application.bachelor.deadline as deadline">
+                {{deadline.beforehand ? '早申' + deadline.beforehand + '; 常规' + deadline.standard : deadline.standard}}
+              </ng-container>
               <br><br>
               <div id="requirements-bachelor">
                 申请要求
               </div>
-              {{college.application.bachelor.requirement}}
+              语言要求 : 托福{{college.application.bachelor.requirement.language.toefl}} / 雅思{{college.application.bachelor.requirement.language.ielts}}
+              <br><br>
+              <div id="collections-master">
+                作品集要求
+              </div>
+              {{college.application.bachelor.requirement.collections}}
               <br><br>
               帕森斯挑战<br>
               选择任意主题或概念，用三个原创作品对它进行阐述，并用一篇大约250个单词的文章简要的解释每一件原创作品。该系列作品应当表达出对主题的概念性和创意性的把握和理解。申请人可以选择任何媒体形式来创作作品——速写、视频、摄影、雕塑、3D作品、拼贴画、数码图像，即可以选择单一媒体形式进行创作，也可以同时选用多种。帕森斯挑战旨在帮助招生委员会了解申请人如何根据主题拓展概念，视觉性地呈现主题，并用写作来为作品润色。/移动端产品设计、字体设计、运动图像、广告设计和信息设计。
-              <br><br>
-              作品集要求<br>
-              通过Slideroom上传8-12件作品。可包括速写、油画、雕塑、摄影、数码媒体、设计、三维作品、网页设计、动画、视频和其他数码媒体。作品需附上名称、大小、日期和描述。上传作品必须表现出申请人的个人视觉呈现能力、创造力、已有的技能及专业经验。
               <br><br>
               <hr>
               <br><br>
@@ -120,18 +124,22 @@
               <div id="deadline-master">
                 截止日期
               </div>
-              {{college.application.master.deadline}}
+              <ng-container *ngIf="college.application.master.deadline as deadline">
+                {{deadline.beforehand ? '早申' + deadline.beforehand + '; 常规' + deadline.standard : deadline.standard}}
+              </ng-container>
               <br><br>
               <div id="requirements-master">
                 申请要求
               </div>
-              {{college.application.master.requirement}}
+              语言要求 : 托福{{college.application.master.requirement.language.toefl}} / 雅思{{college.application.master.requirement.language.ielts}}
+              <br><br>
+              <div id="collections-master">
+                作品集要求
+              </div>
+              {{college.application.master.requirement.collections}}
               <br><br>
               帕森斯挑战<br>
               选择任意主题或概念，用三个原创作品对它进行阐述，并用一篇大约250个单词的文章简要的解释每一件原创作品。该系列作品应当表达出对主题的概念性和创意性的把握和理解。申请人可以选择任何媒体形式来创作作品——速写、视频、摄影、雕塑、3D作品、拼贴画、数码图像，即可以选择单一媒体形式进行创作，也可以同时选用多种。帕森斯挑战旨在帮助招生委员会了解申请人如何根据主题拓展概念，视觉性地呈现主题，并用写作来为作品润色。/移动端产品设计、字体设计、运动图像、广告设计和信息设计。
-              <br><br>
-              作品集要求<br>
-              通过Slideroom上传8-12件作品。可包括速写、油画、雕塑、摄影、数码媒体、设计、三维作品、网页设计、动画、视频和其他数码媒体。作品需附上名称、大小、日期和描述。上传作品必须表现出申请人的个人视觉呈现能力、创造力、已有的技能及专业经验。
               <br><br>
             </div>
             <div class="tab-pane" id="tuition" role="tabpanel" aria-labelledby="tuition-tab">

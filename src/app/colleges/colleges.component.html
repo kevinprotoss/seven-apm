@@ -28,90 +28,66 @@
   </div>
   <div class="w-70 mx-auto mt-5 mb-7 d-flex flex-column">
     <div class="w-80 mx-auto d-flex flex-row justify-content-around">
-      <div class="text-center">
+      <div class="text-center" (click)="region='us'">
         美国<br>
         UNITED STATES
       </div>
-      <div class="text-center">
+      <div class="text-center" (click)="region='gb'">
         英国<br>
         UNITED KINDOM
       </div>
-      <div class="text-center">
+      <div class="text-center" (click)="region='rest'">
         其他<br>
         OTHERS
       </div>
     </div>
     <hr class="mb-0 border-warning">
-    <div>
-      <img class="w-100" src="./assets/img/colleagues/map/usa.png"/>
+    <div [ngSwitch]="region">
+      <img *ngSwitchCase="'us'" class="w-100" src="./assets/img/colleagues/map/usa.png"/>
+      <img *ngSwitchCase="'gb'" class="w-100" src="./assets/img/colleagues/map/usa.png"/>
+      <img *ngSwitchCase="'rest'" class="w-100" src="./assets/img/colleagues/map/usa.png"/>
     </div>
-    <!--<div *ngIf="(collegesInUS$ | async) as collegesInUS">-->
-    <!--  <div *ngFor="let college of collegesInUS[currentPage]">-->
-    <!--    {{college.id}}-->
-    <!--  </div>-->
-    <!--</div>-->
-    <div class="d-flex flex-column">
-      <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
-        <div class="mr-3 w-40">
-          <img src="./assets/img/colleagues/parsons.jpg" class="w-100"/>
-        </div>
-        <div class="ml-3">
-          申请难度：一般<br>
-          留学预算：$42030 / 平均奖学金$27,982<br>
-          语言成绩：托福92 / 雅思7.0<br>
-          申请截止：早申11月1日 / 常规1月15日<br>
-          优质专业：室内设计 / 服装设计 / 插画设计...
-        </div>
-        <div class="w-100 mt-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-light">了解申请流程</button>
-          <button type="button" class="ml-2 btn btn-light">获取留学方案</button>
-        </div>
-      </div>
-      <hr class="divider">
-      <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
-        <div class="mr-3 w-40">
-          <img src="./assets/img/colleagues/st martins.jpg" class="w-100"/>
-        </div>
-        <div class="ml-3">
-          申请难度：困难<br>
-          留学预算：$15180 / 平均奖学金$2,000<br>
-          语言成绩：托福N/A / 雅思6.0<br>
-          申请截止：1月15日<br>
-          优质专业：室内设计 / 服装设计 / 插画设计 / 平面设计...
-        </div>
-        <div class="w-100 mt-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-light">了解申请流程</button>
-          <button type="button" class="ml-2 btn btn-light">获取留学方案</button>
+    <div *ngIf="(pagedColleges$ | async) as colleges">
+      <div class="d-flex flex-column">
+        <div *ngFor="let college of colleges[currentPage]">
+          <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
+            <div class="mr-3 w-40">
+              <a [routerLink]="'/colleges/' + college.id">
+                <img src="./assets/img/colleagues/parsons.jpg" class="w-100"/>
+              </a>
+            </div>
+            <div class="ml-3">
+              留学预算：{{college.tuition.totalFee}}<br>
+              语言成绩：托福{{college.application.master.requirement.language.toefl}} / 雅思{{college.application.master.requirement.language.ielts}}<br>
+              申请截止：
+              <ng-container *ngIf="college.application.master.deadline as deadline">
+                {{deadline.beforehand ? '早申' + deadline.beforehand + ' / 常规' + deadline.standard : deadline.standard}}
+              </ng-container>
+              <br>
+              优质专业：
+              <ng-container *ngFor="let major of college.popularMajors; last as isLast">
+                {{isLast ? major.name : major.name + ' / '}}
+              </ng-container>
+              ...
+            </div>
+            <div class="w-100 mt-2 d-flex justify-content-end">
+              <button type="button" class="btn btn-light rounded-0" [routerLink]="'/colleges/' + college.id">了解申请流程</button>
+              <button type="button" class="ml-2 btn btn-light rounded-0" disabled>获取留学方案</button>
+            </div>
+          </div>
+          <hr class="divider">
         </div>
       </div>
-      <hr class="divider">
-      <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
-        <div class="mr-3 w-40">
-          <img src="./assets/img/colleagues/rhode.jpg" class="w-100"/>
-        </div>
-        <div class="ml-3">
-          申请难度：困难<br>
-          留学预算：$45530 / 平均奖学金$25,412<br>
-          语言成绩：托福93 / 雅思6.5<br>
-          申请截止：早申11月1日 / 常规2月1日<br>
-          优质专业：工业设计 / 平面设计 / 多媒体设计 / 建筑设计...
-        </div>
-        <div class="w-100 mt-2 d-flex justify-content-end">
-          <button type="button" class="btn btn-light">了解申请流程</button>
-          <button type="button" class="ml-2 btn btn-light">获取留学方案</button>
-        </div>
+      <div class="mt-4 d-flex flex-row flex-wrap justify-content-end align-items-center">
+        <span *ngIf="currentPage > 0; else hidden" class="mx-4 bg-transparent border-bottom border-right left" (click)="currentPage=currentPage-1"></span>
+        <span *ngFor="let page of colleges | pagination" class="dot mx-4 rounded bg-dark" [class.active]="page === currentPage" (click)="currentPage=page">
+          {{page+1}}
+        </span>
+        <span *ngIf="currentPage < colleges.length - 1; else hidden" class="mx-4 bg-transparent border-bottom border-right right" (click)="currentPage=currentPage+1"></span>
+        <ng-template #hidden>
+          <span class="mx-4 bg-transparent right"></span>
+        </ng-template>
       </div>
-      <hr class="divider">
-    </div>
-    <div class="mt-4 d-flex flex-row flex-wrap justify-content-end align-items-center">
-      <span *ngIf="!isFirstPage()" class="dot mx-4 bg-transparent border-bottom border-right left"></span>
-      <!--<span *ngFor="let page of pages" class="dot mx-4 rounded bg-dark" [class.active]="page === currentPage">-->
-      <!--  {{page}}-->
-      <!--</span>-->
-      <span class="dot mx-4 rounded bg-dark active">1</span>
-      <span class="dot mx-4 rounded bg-dark">2</span>
-      <span class="dot mx-4 rounded bg-dark">3</span>
-      <span *ngIf="!isLastPage()" class="mx-4 bg-transparent border-bottom border-right right"></span>
     </div>
   </div>
 </section>

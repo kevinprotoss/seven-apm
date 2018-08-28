@@ -18,16 +18,14 @@ export class CollegesComponent implements OnInit {
   private _collegesInUS$: Observable<College[][]>;
   private _collegesInGB$: Observable<College[][]>;
   private _collegesInRest$: Observable<College[][]>;
-  private pageSize: number = 5;
+  private region: string = 'us';
+  private pageSize: number = 2;
   private currentPage: number = 0;
-  // pages: string[];
-  // currentPage: string = '1';
 
   constructor(private collegeService: CollegeService) { }
 
   ngOnInit() {
     this.colleges$ = this.collegeService.getColleges();
-    // this.pages = ['1', '2', '3', '4'];
   }
   
   set colleges$(values$: Observable<College[]>) {
@@ -46,36 +44,16 @@ export class CollegesComponent implements OnInit {
     );
   }
   
-  get collegesInUS$(): Observable<College[][]> {
-    return this._collegesInUS$;
-  }
-  
-  get collegesInGB$(): Observable<College[][]> {
-    return this._collegesInGB$;
-  }
-  
-  get collegesInRest$(): Observable<College[][]> {
-    return this._collegesInRest$;
-  }
-  
-  isFirstPage(): boolean {
-    return true;
-  }
-  
-  isLastPage(): boolean {
-    return false;
-  }
-  
-  nextPage() {
-    
-  }
-  
-  previousPage() {
-    
-  }
-  
-  goToPage() {
-    
+  get pagedColleges$(): Observable<College[][]> {
+    switch(this.region) {
+      case 'rest':
+        return this._collegesInRest$;
+      case 'gb':
+        return this._collegesInGB$;
+      case 'us':
+      default:
+        return this._collegesInUS$;
+    }
   }
 
 }

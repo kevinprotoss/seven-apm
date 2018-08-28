@@ -5,6 +5,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HttpClientModule }    from '@angular/common/http';
 
+import { SafeHtmlPipe } from './safe-html.pipe';
+import { PaginationPipe } from './pagination.pipe';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +16,6 @@ import { TutorDetailComponent } from './tutor-detail/tutor-detail.component';
 import { FooterComponent } from './footer/footer.component';
 import { PromotionsComponent } from './promotions/promotions.component';
 import { HeaderComponent } from './header/header.component';
-import { SafeHtmlPipe } from './safe-html.pipe';
 import { CollegesComponent } from './colleges/colleges.component';
 import { CollegeDetailComponent } from './college-detail/college-detail.component';
 import { MajorsComponent } from './majors/majors.component';
@@ -32,7 +34,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FooterComponent,
     PromotionsComponent,
     HeaderComponent,
-    SafeHtmlPipe,
     CollegesComponent,
     CollegeDetailComponent,
     MajorsComponent,
@@ -40,7 +41,9 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ConsultingComponent,
     CoursesComponent,
     CourseDetailComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    SafeHtmlPipe,
+    PaginationPipe
   ],
   imports: [
     BrowserModule,
