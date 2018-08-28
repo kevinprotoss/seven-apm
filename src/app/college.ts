@@ -85,7 +85,7 @@ export class College {
   }
   
   get popularMajors(): Array<Major> {
-    return this.masterMajors.slice(0, 4);
+    return this.masterMajors.slice(0, 3);
   }
 
   constructor(data: any) {

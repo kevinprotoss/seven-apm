@@ -79,11 +79,11 @@
         </div>
       </div>
       <div class="mt-4 d-flex flex-row flex-wrap justify-content-end align-items-center">
-        <span *ngIf="currentPage > 0; else hidden" class="mx-4 bg-transparent border-bottom border-right left" (click)="currentPage=currentPage-1"></span>
+        <span *ngIf="currentPage > 0; else hidden" class="mx-4 bg-transparent border-bottom border-right border-dark left" (click)="currentPage=currentPage-1"></span>
         <span *ngFor="let page of colleges | pagination" class="dot mx-4 rounded bg-dark" [class.active]="page === currentPage" (click)="currentPage=page">
           {{page+1}}
         </span>
-        <span *ngIf="currentPage < colleges.length - 1; else hidden" class="mx-4 bg-transparent border-bottom border-right right" (click)="currentPage=currentPage+1"></span>
+        <span *ngIf="currentPage < colleges.length - 1; else hidden" class="mx-4 bg-transparent border-bottom border-right border-dark right" (click)="currentPage=currentPage+1"></span>
         <ng-template #hidden>
           <span class="mx-4 bg-transparent right"></span>
         </ng-template>
