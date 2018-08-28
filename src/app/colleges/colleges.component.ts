@@ -18,9 +18,9 @@ export class CollegesComponent implements OnInit {
   private _collegesInUS$: Observable<College[][]>;
   private _collegesInGB$: Observable<College[][]>;
   private _collegesInRest$: Observable<College[][]>;
-  private region: string = 'us';
-  private pageSize: number = 2;
-  private currentPage: number = 0;
+  region: string = 'us';
+  pageSize: number = 2;
+  currentPage: number = 0;
 
   constructor(private collegeService: CollegeService) { }
 
