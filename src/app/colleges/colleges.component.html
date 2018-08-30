@@ -28,24 +28,24 @@
   </div>
   <div class="w-70 mx-auto mt-5 mb-7 d-flex flex-column">
     <div class="w-80 mx-auto d-flex flex-row justify-content-around">
-      <div class="text-center" (click)="region='us'">
+      <div class="text-center" (click)="selectRegion('us')">
         美国<br>
         UNITED STATES
       </div>
-      <div class="text-center" (click)="region='gb'">
+      <div class="text-center" (click)="selectRegion('uk')">
         英国<br>
         UNITED KINDOM
       </div>
-      <div class="text-center" (click)="region='rest'">
+      <div class="text-center" (click)="selectRegion('rest')">
         其他<br>
         OTHERS
       </div>
     </div>
     <hr class="mb-0 border-warning">
     <div [ngSwitch]="region">
-      <img *ngSwitchCase="'us'" class="w-100" src="./assets/img/colleagues/map/usa.png"/>
-      <img *ngSwitchCase="'gb'" class="w-100" src="./assets/img/colleagues/map/usa.png"/>
-      <img *ngSwitchCase="'rest'" class="w-100" src="./assets/img/colleagues/map/usa.png"/>
+      <img *ngSwitchCase="'us'" class="w-100" src="./assets/img/colleges/map/us.jpg"/>
+      <img *ngSwitchCase="'uk'" class="w-100" src="./assets/img/colleges/map/uk.jpg"/>
+      <img *ngSwitchCase="'rest'" class="w-100" src="./assets/img/colleges/map/others.jpg"/>
     </div>
     <div *ngIf="(pagedColleges$ | async) as colleges">
       <div class="d-flex flex-column">
@@ -53,17 +53,17 @@
           <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
             <div class="mr-3 w-40">
               <a [routerLink]="'/colleges/' + college.id">
-                <img src="./assets/img/colleagues/parsons.jpg" class="w-100"/>
+                <img [src]="college.thumbnailUrl" class="w-100"/>
               </a>
             </div>
             <div class="ml-3">
               留学预算：{{college.tuition.totalFee}}<br>
-              语言成绩：托福{{college.application.master.requirement.language.toefl}} / 雅思{{college.application.master.requirement.language.ielts}}<br>
-              申请截止：
-              <ng-container *ngIf="college.application.master.deadline as deadline">
-                {{deadline.beforehand ? '早申' + deadline.beforehand + ' / 常规' + deadline.standard : deadline.standard}}
+              <ng-container *ngIf="college.abstract.requirement">
+                语言成绩：{{college.abstract.requirement}}<br>
               </ng-container>
-              <br>
+              <ng-container *ngIf="college.abstract.deadline">
+                申请截止：{{college.abstract.deadline}}<br>
+              </ng-container>
               优质专业：
               <ng-container *ngFor="let major of college.popularMajors; last as isLast">
                 {{isLast ? major.name : major.name + ' / '}}

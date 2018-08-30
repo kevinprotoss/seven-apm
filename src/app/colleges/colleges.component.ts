@@ -16,10 +16,10 @@ export class CollegesComponent implements OnInit {
   faSearch = faSearch;
   private _colleges$: Observable<College[]>;
   private _collegesInUS$: Observable<College[][]>;
-  private _collegesInGB$: Observable<College[][]>;
+  private _collegesInUK$: Observable<College[][]>;
   private _collegesInRest$: Observable<College[][]>;
   region: string = 'us';
-  pageSize: number = 2;
+  pageSize: number = 4;
   currentPage: number = 0;
 
   constructor(private collegeService: CollegeService) { }
@@ -34,12 +34,12 @@ export class CollegesComponent implements OnInit {
       map(colleges => colleges.filter(college => college.country === 'us')),
       map(colleges => chunk(colleges, this.pageSize))
     );
-    this._collegesInGB$ = values$.pipe(
-      map(colleges => colleges.filter(college => college.country === 'gb')),
+    this._collegesInUK$ = values$.pipe(
+      map(colleges => colleges.filter(college => college.country === 'uk')),
       map(colleges => chunk(colleges, this.pageSize))
     );
     this._collegesInRest$ = values$.pipe(
-      map(colleges => colleges.filter(college => college.country !== 'us' && college.country !== 'gb')),
+      map(colleges => colleges.filter(college => college.country !== 'us' && college.country !== 'uk')),
       map(colleges => chunk(colleges, this.pageSize))
     );
   }
@@ -48,12 +48,16 @@ export class CollegesComponent implements OnInit {
     switch(this.region) {
       case 'rest':
         return this._collegesInRest$;
-      case 'gb':
-        return this._collegesInGB$;
+      case 'uk':
+        return this._collegesInUK$;
       case 'us':
       default:
         return this._collegesInUS$;
     }
   }
 
+  selectRegion(region: string) {
+    this.region = region;
+    this.currentPage = 0;
+  }
 }

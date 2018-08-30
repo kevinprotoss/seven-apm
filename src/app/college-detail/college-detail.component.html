@@ -1,6 +1,15 @@
 <section id="college-detail">
   <div *ngIf="(college$ | async) as college; else loading">
-    <div class="banner" [style.background-image]="'url(./assets/img/header/colleague-detail.jpg)'"></div>
+    <div class="banner" [style.background-image]="'url('+ college.bannerUrl +')'">
+      <div class="w-75 mx-auto pt-8 d-flex flex-row align-items-center text-white">
+        <div>
+          <img [src]="college.logoUrl" width=100/>
+        </div>
+        <div class="ml-3">
+          <h3>{{college.name.zh}}<br>{{college.name.en}}</h3>
+        </div>
+      </div>
+    </div>
     <div class="w-75 mx-auto d-flex flex-column">
       <div class="mt-5">
         <h4>院校介绍</h4><br>
@@ -9,14 +18,14 @@
       <div class="mt-5 d-flex flex-row flex-nowrap">
         <div *ngIf="activeTab === Tabs.Majors" class="w-25 pr-5 pt-7 d-flex flex-column">
           <div class="pl-4 text-warning">
-            本科 BA
+            本科专业
           </div>
           <hr class="mx-0 bg-warning">
           <div class="pl-4 mt-4 d-flex flex-column">
             <a *ngFor="let major of college.bachelorMajors" [ngx-scroll-to]="'#' + major.id">{{major.name}}</a>
           </div>
           <div class="pl-4 mt-4 text-warning">
-            研究生 MA
+            研究生专业
           </div>
           <hr class="mx-0 bg-warning">
           <div class="pl-4 d-flex flex-column">
@@ -25,25 +34,17 @@
         </div>
         <div *ngIf="activeTab === Tabs.Application" class="w-25 pr-5 pt-7 d-flex flex-column">
           <div class="pl-4 text-warning">
-            本科 BA
+            申请要求
           </div>
           <hr class="mx-0 bg-warning">
           <div class="pl-4 mt-4 d-flex flex-column">
-            <a ngx-scroll-to="#deadline-bachelor">截止日期</a>
-            <a ngx-scroll-to="#requirements-bachelor">申请要求</a>
-          </div>
-          <div class="pl-4 mt-4 text-warning">
-            研究生 MA
-          </div>
-          <hr class="mx-0 bg-warning">
-          <div class="pl-4 mt-4 d-flex flex-column">
-            <a ngx-scroll-to="#deadline-master">截止日期</a>
-            <a ngx-scroll-to="#requirements-master">申请要求</a>
+            <a ngx-scroll-to="#bachelor">本科生</a>
+            <a ngx-scroll-to="#master">研究生</a>
           </div>
         </div>
         <div *ngIf="activeTab === Tabs.Tuition" class="w-25 pr-5 pt-7 d-flex flex-column">
           <div class="pl-4 text-warning">
-            本科 BA & 研究生 MA
+            学费明细
           </div>
           <hr class="mx-0 bg-warning">
           <div class="pl-4 mt-4 d-flex flex-column">
@@ -95,58 +96,17 @@
             </div>
             <div class="tab-pane" id="application" role="tabpanel" aria-labelledby="application-tab">
               <br><br>
-              <h5>本科生</h5>
-              <br><br>
-              <div id="deadline-bachelor">
-                截止日期
-              </div>
-              <ng-container *ngIf="college.application.bachelor.deadline as deadline">
-                {{deadline.beforehand ? '早申' + deadline.beforehand + '; 常规' + deadline.standard : deadline.standard}}
-              </ng-container>
-              <br><br>
-              <div id="requirements-bachelor">
-                申请要求
-              </div>
-              语言要求 : 托福{{college.application.bachelor.requirement.language.toefl}} / 雅思{{college.application.bachelor.requirement.language.ielts}}
-              <br><br>
-              <div id="collections-master">
-                作品集要求
-              </div>
-              {{college.application.bachelor.requirement.collections}}
-              <br><br>
-              帕森斯挑战<br>
-              选择任意主题或概念，用三个原创作品对它进行阐述，并用一篇大约250个单词的文章简要的解释每一件原创作品。该系列作品应当表达出对主题的概念性和创意性的把握和理解。申请人可以选择任何媒体形式来创作作品——速写、视频、摄影、雕塑、3D作品、拼贴画、数码图像，即可以选择单一媒体形式进行创作，也可以同时选用多种。帕森斯挑战旨在帮助招生委员会了解申请人如何根据主题拓展概念，视觉性地呈现主题，并用写作来为作品润色。/移动端产品设计、字体设计、运动图像、广告设计和信息设计。
-              <br><br>
+              <h5 id="bachelor">本科生</h5>
+              <div class="my-5" [innerHTML]="college.application.bachelor | safeHtml"></div>
               <hr>
               <br><br>
-              <h5>研究生</h5>
-              <br><br>
-              <div id="deadline-master">
-                截止日期
-              </div>
-              <ng-container *ngIf="college.application.master.deadline as deadline">
-                {{deadline.beforehand ? '早申' + deadline.beforehand + '; 常规' + deadline.standard : deadline.standard}}
-              </ng-container>
-              <br><br>
-              <div id="requirements-master">
-                申请要求
-              </div>
-              语言要求 : 托福{{college.application.master.requirement.language.toefl}} / 雅思{{college.application.master.requirement.language.ielts}}
-              <br><br>
-              <div id="collections-master">
-                作品集要求
-              </div>
-              {{college.application.master.requirement.collections}}
-              <br><br>
-              帕森斯挑战<br>
-              选择任意主题或概念，用三个原创作品对它进行阐述，并用一篇大约250个单词的文章简要的解释每一件原创作品。该系列作品应当表达出对主题的概念性和创意性的把握和理解。申请人可以选择任何媒体形式来创作作品——速写、视频、摄影、雕塑、3D作品、拼贴画、数码图像，即可以选择单一媒体形式进行创作，也可以同时选用多种。帕森斯挑战旨在帮助招生委员会了解申请人如何根据主题拓展概念，视觉性地呈现主题，并用写作来为作品润色。/移动端产品设计、字体设计、运动图像、广告设计和信息设计。
-              <br><br>
+              <h5 id="master">研究生</h5>
+              <div class="my-5" [innerHTML]="college.application.master | safeHtml"></div>
             </div>
             <div class="tab-pane" id="tuition" role="tabpanel" aria-labelledby="tuition-tab">
-              <div id="fees">
-                预算项目 :
-              </div>
-              <br>
+              <br><br>
+              <h5 id="fees">预算项目</h5>
+              <br><br>
               <div *ngFor="let fee of college.tuition.formattedFees">
                 {{fee.name}} —— {{fee.price}}
                 <br><br>

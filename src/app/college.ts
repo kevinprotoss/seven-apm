@@ -71,6 +71,11 @@ class Tuition {
 export class College {
   id: string;
   country: string;
+  name: object;
+  bannerUrl: string;
+  thumbnailUrl: string;
+  logoUrl: string;
+  abstract: object;
   introduction: string;
   majors: Array<Major>;
   application: object;
@@ -91,6 +96,11 @@ export class College {
   constructor(data: any) {
     this.id = data.id;
     this.country = data.country;
+    this.name = data.name;
+    this.bannerUrl = data.bannerUrl;
+    this.thumbnailUrl = data.thumbnailUrl;
+    this.logoUrl = data.logoUrl;
+    this.abstract = data.abstract;
     this.introduction = data.introduction;
     this.majors = data.majors.map(major => new Major(major));
     this.application = data.application;

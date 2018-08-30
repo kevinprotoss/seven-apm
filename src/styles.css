@@ -21,75 +21,83 @@ body {
 }
 
 .t-50 {
-  top: 50% !important;
+  top: 50%;
 }
 
 .l-50 {
-  left: 50% !important;
+  left: 50%;
 }
 
 .w-10 {
-  width: 10% !important;
+  width: 10%;
 }
 
 .w-20 {
-  width: 20% !important;
+  width: 20%;
 }
 
 .w-30 {
-  width: 30% !important;
+  width: 30%;
 }
 
 .w-40 {
-  width: 40% !important;
+  width: 40%;
 }
 
 .w-60 {
-  width: 60% !important;
+  width: 60%;
 }
 
 .w-70 {
-  width: 70% !important;
+  width: 70%;
 }
 
 .w-80 {
-  width: 80% !important;
+  width: 80%;
 }
 
 .w-90 {
-  width: 90% !important;
+  width: 90%;
 }
 
 .mb-6 {
-  margin-bottom: 5rem !important;
+  margin-bottom: 5rem;
 }
 
 .my-6 {
-  margin-top: 5rem !important;
-  margin-bottom: 5rem !important;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .mb-7 {
-  margin-bottom: 10rem !important;
+  margin-bottom: 10rem;
 }
 
 .my-7 {
-  margin-top: 10rem !important;
-  margin-bottom: 10rem !important;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
 }
 
 .pt-6 {
-  padding-top: 5rem !important;
+  padding-top: 5rem;
 }
 
 .pt-7 {
-  padding-top: 10rem !important;
+  padding-top: 10rem;
+}
+
+.pt-8 {
+  padding-top: 20rem;
 }
 
 .pb-6 {
-  padding-bottom: 5rem !important;
+  padding-bottom: 5rem;
 }
 
 .pb-7 {
-  padding-bottom: 10rem !important;
+  padding-bottom: 10rem;
+}
+
+.pb-8 {
+  padding-bottom: 20rem;
 }
