@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser'
-import { filter, map, mergeMap } from 'rxjs/operators';
+import { SafeStyle } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-header',
@@ -70,11 +68,7 @@ export class HeaderComponent implements OnInit {
     }
   };
   
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private sanitizer: DomSanitizer) {
-  }
+  constructor() { }
 
   ngOnInit() {
     // this.router.events.pipe(
