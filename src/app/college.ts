@@ -1,6 +1,6 @@
 import * as numeral from 'numeral';
 
-// Add locale support for USA
+// Add locale support for USA, UK, and others
 numeral.register('locale', 'en-us', {
   delimiters: {
     thousands: ',',
@@ -15,12 +15,130 @@ numeral.register('locale', 'en-us', {
   ordinal: function (number) {
     var b = number % 10;
     return (~~ (number % 100 / 10) === 1) ? 'th' :
-        (b === 1) ? 'st' :
-        (b === 2) ? 'nd' :
-        (b === 3) ? 'rd' : 'th';
+      (b === 1) ? 'st' :
+      (b === 2) ? 'nd' :
+      (b === 3) ? 'rd' : 'th';
   },
   currency: {
     symbol: '$'
+  }
+});
+
+numeral.register('locale', 'en-gb', {
+  delimiters: {
+    thousands: ',',
+    decimal: '.'
+  },
+  abbreviations: {
+    thousand: 'k',
+    million: 'm',
+    billion: 'b',
+    trillion: 't'
+  },
+  ordinal: function (number) {
+    var b = number % 10;
+    return (~~ (number % 100 / 10) === 1) ? 'th' :
+      (b === 1) ? 'st' :
+      (b === 2) ? 'nd' :
+      (b === 3) ? 'rd' : 'th';
+  },
+  currency: {
+    symbol: '£'
+  }
+});
+
+numeral.register('locale', 'it', {
+  delimiters: {
+    thousands: '.',
+    decimal: ','
+  },
+  abbreviations: {
+    thousand: 'mila',
+    million: 'mil',
+    billion: 'b',
+    trillion: 't'
+  },
+  ordinal: function (number) {
+    return 'º';
+  },
+  currency: {
+    symbol: '€'
+  }
+});
+
+numeral.register('locale', 'fr', {
+  delimiters: {
+    thousands: ' ',
+    decimal: ','
+  },
+  abbreviations: {
+    thousand: 'k',
+    million: 'm',
+    billion: 'b',
+    trillion: 't'
+  },
+  ordinal : function (number) {
+    return number === 1 ? 'er' : 'e';
+  },
+  currency: {
+    symbol: '€'
+  }
+});
+
+numeral.register('locale', 'fi', {
+  delimiters: {
+    thousands: ' ',
+    decimal: ','
+  },
+  abbreviations: {
+    thousand: 'k',
+    million: 'M',
+    billion: 'G',
+    trillion: 'T'
+  },
+  ordinal: function (number) {
+    return '.';
+  },
+  currency: {
+    symbol: '€'
+  }
+});
+
+numeral.register('locale', 'chs', {
+  delimiters: {
+    thousands: ',',
+    decimal: '.'
+  },
+  abbreviations: {
+    thousand: '千',
+    million: '百万',
+    billion: '十亿',
+    trillion: '兆'
+  },
+  ordinal: function (number) {
+    return '.';
+  },
+  currency: {
+    symbol: '¥'
+  }
+});
+
+numeral.register('locale', 'ja', {
+  delimiters: {
+    thousands: ',',
+    decimal: '.'
+  },
+  abbreviations: {
+    thousand: '千',
+    million: '百万',
+    billion: '十億',
+    trillion: '兆'
+  },
+  ordinal: function (number) {
+    return '.';
+  },
+  currency: {
+    symbol: '¥'
   }
 });
 
@@ -56,6 +174,7 @@ class Tuition {
   }
 
   get totalFee(): string {
+    numeral.locale(this.currency);
     let totalFee = this.fees
       .map(fee => fee.price)
       .reduce((a, b) => a + b, 0);
