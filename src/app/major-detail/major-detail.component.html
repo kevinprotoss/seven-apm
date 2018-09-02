@@ -1,6 +1,15 @@
 <section id="major-detail">
   <div *ngIf="(major$ | async) as major; else loading">
-    <div class="banner" [style.background-image]="'url(' + major.bannerUrl + ')'"></div>
+    <div class="banner" [style.background-image]="'url(' + major.bannerUrl + ')'">
+      <div class="w-75 mx-auto pt-8 d-flex flex-row align-items-center text-white">
+        <div>
+          <img [src]="major.logoUrl" width=100/>
+        </div>
+        <div class="ml-3">
+          <h3>{{major.name.zh}}<br>{{major.name.en}}</h3>
+        </div>
+      </div>
+    </div>
     <div class="w-70 mx-auto mt-5 mb-7">
       <h4 class="my-3">
         什么是{{major.name.zh}}?

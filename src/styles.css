@@ -1,10 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url("/assets/fonts/SourceHanSansCN-Normal.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url("/assets/fonts/SourceHanSansCN-Bold.otf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url("/assets/fonts/SourceHanSansCN-ExtraLight.otf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url("/assets/fonts/SourceHanSansCN-Light.otf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url("/assets/fonts/SourceHanSansCN-Medium.otf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url("/assets/fonts/SourceHanSansCN-Heavy.otf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
 body {
   padding: 0;
   border: 0;
   margin: 0 auto;
   background-color: #ffffff;
   min-height: 100vh;
+  font-family: 'SourceHanSansCN', 'arial', sans-serif;
 }
 
 .banner {

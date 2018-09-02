@@ -25,6 +25,7 @@
         "introduction": "动漫设计是一门综合性很强的专业，该专业要求学生具备一定的审美能力、手绘能力、创新能力、写作能力。动漫设计专业旨在培养具备电影、电视动画创作所需要的基础知识及理论，能在电影、电视等媒体的制作岗位上，从事动画原画、动画创意设计和编导及三维电脑动画创作理论研究方面的专业人才。",
         "thumbnailUrl": "./assets/img/majors/thumbnails/animation.jpg",
         "bannerUrl": "./assets/img/major-detail/banners/animation.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/animation.png",
         "name": {
             "zh": "动画",
             "en": "Animation "
@@ -63,7 +64,8 @@
             "zh": "建筑",
             "en": "Architecture"
         },
-        "bannerUrl": "./assets/img/major-detail/banners/architecture.jpg"
+        "bannerUrl": "./assets/img/major-detail/banners/architecture.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/architecture.png"
     },
     {
         "name": {
@@ -71,6 +73,7 @@
             "zh": "艺术管理"
         },
         "bannerUrl": "./assets/img/major-detail/banners/art-management.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/art-management.png",
         "thumbnailUrl": "./assets/img/majors/thumbnails/art-management.jpg",
         "introduction": "艺术管理专业是以现代管理观念与管理理论为依托，以文化市场需要为根据所设计的新型专业。它以综合培养、潜质全面开发的教学理念，通过大量与艺术管理相关的艺术生产、艺术市场营销、艺术经纪、知识产权、文化法规、公关、广告等课程，全面了解各种艺术门类的规律及特征。期间还让学员直接参与大量的艺术活动策划与经销，学以致用，增加实际操作能力，从而为参与文化市场开发及经销奠定扎实的理论和实践基础。",
         "faqs": [
@@ -101,6 +104,7 @@
         "major": "基本乐理、视唱练耳、声乐、和声学、曲式学、歌曲作法、中国音乐史、外国音乐史、合唱与指挥、音乐欣赏、音乐教学论等。",
         "introduction": "作曲是指创作音乐的行为，或音乐的创作过程，也可表示音乐作品的创作者。 运用和声学、复调、配器法、曲式结构的技术理论体系来表达创作者音乐思想的方法。各个国家、各个历史时期的创作风格和技术方法各有不同，大致分为巴洛克时期、古典派、浪漫派、现代派各种风格。",
         "bannerUrl": "./assets/img/major-detail/banners/musical-composition.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/musical-composition.png",
         "name": {
             "en": "Musical Composition",
             "zh": "音乐作曲"
@@ -110,6 +114,7 @@
         "career": "数字媒体艺术和设计是一门以技术为主、艺术为辅，技术与艺术相结合的新兴学科，旨在培养兼具技术和艺术的新型复合型艺术设计和制作人才。这是传统教育人才培养的空白，又是新兴产业市场崛起的急需。我国在数字媒体艺术人才方面存在巨大缺口。数字媒体产业已成为一个发展规模可观的经济产业，随着计算机技术、网络技术的加入，人们对视觉美感的要求越来越高，数字媒体产业将具有巨大的发展前景。",
         "id": "digital-media",
         "bannerUrl": "./assets/img/major-detail/banners/digital-media.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/digital-media.png",
         "name": {
             "zh": "数字媒体",
             "en": "Digital Media"
@@ -146,6 +151,7 @@
         },
         "bannerUrl": "./assets/img/major-detail/banners/fashion-management.jpg",
         "thumbnailUrl": "./assets/img/majors/thumbnails/fashion-management.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/fashion-management.png",
         "introduction": "时尚管理是在发掘潜在客户需求和把握潮流动态基础上，通过供应链管理、生产线管理、公关活动策划、市场营销、销售战略制定等各个环节促使产品及企业获得广泛的社会认可。",
         "faqs": [
             {
@@ -176,6 +182,7 @@
         "career": "纯艺术是绘画、雕塑、音乐等专业的集合，纯艺术的就业非常的广泛，像美术院，音乐院，展览馆，雕塑设计院等等都是纯艺术专业的工作单位，纯艺术类工作单位相对其他行业用人较少，所以增加其专业的就业难度，但纯艺术专业工资普遍较高，工作环境优美，工作气氛轻松，这也是纯艺术专业的优势。",
         "id": "fine-art",
         "bannerUrl": "./assets/img/major-detail/banners/fine-art.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/fine-art.png",
         "name": {
             "zh": "纯艺术",
             "en": "Fine Art"
@@ -233,6 +240,7 @@
         "thumbnailUrl": "./assets/img/majors/thumbnails/game-design.jpg",
         "introduction": "游戏设计在整个开发团队中承担了很多的角色，因此，可以说游戏设计师处在整个开发团队这个金字塔的顶部。大多数游戏设计师都是以艺术家、程序员或者测试人员出师，但最终他们都会得到提升。尽管在一个制作团队中，这些工作都是由相关专业人员任职，而且他们可能也在相关领域获得了学位。",
         "bannerUrl": "./assets/img/major-detail/banners/game-design.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/game-design.png",
         "name": {
             "zh": "游戏设计",
             "en": "Game Design"
@@ -242,6 +250,7 @@
         "career": "\r现如今平面设计涉及的领域日益广泛，可选择的就业公司多样性，像广告公司，印刷公司，教育机构，媒体机构，电视台等等，几乎所有的企业都需要平面设计人才，平面设计涵盖的职业范畴也由过去的单一性，变成了如今的广泛性。平面设计师的薪金待遇属于国内高收入职位的前十之列，如果你有过硬的专业技能，自主创业也是一个很好的选择。\r\r热门问答\rQ. 如何在短时间内自己完成一份用于申请平面设计留学的作品集？\rA. 作品集的主题选取非常自由，但一定切忌太大、太空，比如有的学生，刚开始学的时候想以“起源”作为主题，这样的主题就太大，在向下深入的时候也难免落入俗套，比如说经过调研，他选取了“黄河”反应主题。所以在主题选取时，可以选取一些就咱们周围，经常看见，或是亲身经历过的，比如说，垃圾食品、人的骨骼肌肉、昆虫、油画等。\r\rQ. 学习平面设计去哪个国家好？\rA. 英国和美国的平面设计专业实践性很强，导师布置的作业通常是开放性的。每次完成作业要求要在老师和同学面前展示。课外活动有展览会，视觉艺术作品拍卖会，化妆舞会，设计大赛等。很多大学的平面设计专业都会和设计公司有项目上的联系，因此优秀学生会得到导师的推荐，使你顺利步入工作岗位。\r\rQ. 平面设计怎样提高作品的冲击力？\rA. （1）对比，各种对比，大小，颜色，形状，黑白，远近……所有能想到的视觉对比元素，尽量在作品中体现。以一个为主。 （2）运用意象，每个作品都有自己的“格式塔”，尽量突出这个意象，让人可以准确迅速的识别。尽量向观众最熟悉的意象靠拢。 （3）第一印象最重要，给人最大的视觉冲击力。 （4）巧妙。即有一个点可以打动观众，跟“梗”和“包袱”的意思一样。这个“点”就是画龙点睛的那个点。 （5）明确风格。 （6）简化，把最好的想法实现之后看能不能简化再简化。 （7）开始是模仿，找到最喜欢的风格去模仿，模仿中融\r\rQ. 平面设计就业方向有哪些？\rA. 平面设计可以说是所有视觉传达设计的基础了。不管你以后是做视频，做广告，或者再远一点做摄影甚至是环艺等，都离不开平面设计的底子。 一旦具备了作为一位优秀平面设计师应有的素质和技能，只需配备基本的电脑设备就可以成立自己的设计工作室，这对于向往自由生活空间的人来说，不但是一条个人创业的捷径，而且是一种令人向往的生活方式。平面设计专业培训后的就业方向是广告公司、制版、印刷公司、报社、杂志社、编辑部、网络公司、教育机构、各媒体机构等，任何需要制作平面、网站宣传产品的部门。",
         "id": "graphic-design",
         "bannerUrl": "./assets/img/major-detail/banners/graphic-design.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/graphic-design.png",
         "name": {
             "en": "Graphic Design ",
             "zh": "平面设计"
@@ -275,6 +284,7 @@
         "thumbnailUrl": "./assets/img/majors/thumbnails/illustration-design.jpg",
         "introduction": "插画专业乃是艺术留学中受到众多学生推崇和认可的专业之一，在纯艺术和设计创意中做到了很好的平衡，同时就业领域相对较广。插画专业的学生就业往往选择游戏公司、动画公司、商业插画、平面插画、广告公司等领域，较少插画师从事自由职业者的行业。",
         "bannerUrl": "./assets/img/major-detail/banners/illustration-design.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/illustration-design.png",
         "name": {
             "en": "Illustration",
             "zh": "插画"
@@ -310,6 +320,7 @@
         "introduction": "工业设计是指通过学习工业设计的基础理论与知识，具有应用造型设计原理和法则处理各种产品的造型与色彩、形式与外观、结构与功能、结构与材料、外形与工艺、产品与人、产品与环境、市场的关系，并将这些关系统一表现在产品的造型设计的基本能力。",
         "thumbnailUrl": "./assets/img/majors/thumbnails/industrial-design.jpg",
         "bannerUrl": "./assets/img/major-detail/banners/industrial-design.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/industrial-design.png",
         "name": {
             "en": "Industrial Design",
             "zh": "工业设计"
@@ -317,6 +328,7 @@
     },
     {
         "bannerUrl": "./assets/img/major-detail/banners/interaction-design.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/interaction-design.png",
         "name": {
             "zh": "交互设计",
             "en": "Interaction Design"
@@ -356,6 +368,7 @@
             "en": "Interior Design"
         },
         "bannerUrl": "./assets/img/major-detail/banners/interior-design.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/interior-design.png",
         "thumbnailUrl": "./assets/img/majors/thumbnails/interior-design.jpg",
         "introduction": "室内设计专业研究建筑环境的各个方面：规模、比例、排列、灯光、声学、温度、纹理质地、颜色、材料，是一个系统化加工过程。室内设计师还要考虑如何在客户需求和可获得的资源之间做出平衡。本专业教学也为实践性教学，导师会提出某个设计上的问题，然后要求学生设计解决方案，大家会集体讨论和评估你的方案，通过这种实践性教学提高学生解决设计中的问题的能力。",
         "faqs": [
@@ -395,6 +408,7 @@
             "zh": "珠宝设计"
         },
         "bannerUrl": "./assets/img/major-detail/banners/jewellry-design.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/jewellry-design.png",
         "thumbnailUrl": "./assets/img/majors/thumbnails/jewellry-design.jpg",
         "introduction": "培养学生通过加工宝石、其他石材和贵金属艺术作品，从创造性和技术性上去表达情感、思想或内在愿景。包括宝石学、金工和精加工、石材切割、抛光、金属和非金属铸造和成型、电铸、金属着色、上釉、光蚀刻、宝石技巧和艺术、设计理念和个人风格发展。",
         "faqs": [
@@ -448,6 +462,7 @@
             }
         ],
         "thumbnailUrl": "./assets/img/majors/thumbnails/photography.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/photography.png",
         "introduction": "摄影专业的培养目标是具备艺术理论知识，以及具备电影、电视、广告、图片摄影摄像能力，能在电影厂、电视制作部门、广告宣传部门、音像出版部门从事摄影艺术创作、教学和研究工作的高级专门人才。",
         "bannerUrl": "./assets/img/major-detail/banners/photography.jpg",
         "name": {
@@ -459,6 +474,7 @@
         "career": "各级电视台、电视广告制作公司、音像制作机构、影视制作机构、影视广告公司、门户网站、音像出版部门、网络媒体、事业单位宣传部门、动画公司、游戏公司、电视数字节目制作、新闻摄像、纪实摄像、电视节目摄像、 动漫制作及游戏策划、设计、制作等工作的复合型人才。",
         "id": "stage-design",
         "bannerUrl": "./assets/img/major-detail/banners/stage-design.jpg",
+        "logoUrl": "./assets/img/major-detail/logos/stage-design.png",
         "name": {
             "en": "Stage Design",
             "zh": "舞美设计"

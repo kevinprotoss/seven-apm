@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host $IP --port $PORT --public-host $C9_HOSTNAME",
-    "build": "ng build --prod --build-optimizer --base-href /seven-apm/",
+    "build": "ng build --prod --build-optimizer",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
