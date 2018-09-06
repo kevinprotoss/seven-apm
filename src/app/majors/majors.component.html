@@ -91,9 +91,9 @@
       </div>
     </div>
   </div>
-  <div class="w-70 mx-auto mt-5 mb-7 d-flex flex-row flex-wrap justify-content-between">
+  <div class="w-70 mx-auto mt-6 mb-7 d-flex flex-row flex-wrap justify-content-between">
     <div *ngFor="let major of majors$ | async" class="w-23 mb-4 position-relative">
-      <a [routerLink]="'/majors/' + major.id">
+      <a [routerLink]="'/majors/' + major.id" class="hover-effect">
         <img [src]="major.thumbnailUrl" class="w-100"/>
         <div class="overlay pl-3 position-absolute d-flex justify-content-start align-items-center text-white">
           {{major.name.zh}}<br>

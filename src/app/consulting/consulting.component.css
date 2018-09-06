@@ -6,6 +6,10 @@
     font-size: 8px
 }
 
+.font-header {
+    font-size: 1.5rem
+}
+
 .overflow {
     top: 50%;
     left: 50%;

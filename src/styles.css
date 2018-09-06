@@ -68,6 +68,22 @@ body {
   width: 90%;
 }
 
+.ml-6 {
+  margin-left: 5rem;
+}
+
+.ml-7 {
+  margin-left: 10rem;
+}
+
+.mt-6 {
+  margin-top: 5rem;
+}
+
+.mt-7 {
+  margin-top: 10rem;
+}
+
 .mb-6 {
   margin-bottom: 5rem;
 }
