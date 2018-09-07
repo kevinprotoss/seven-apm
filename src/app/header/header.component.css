@@ -8,7 +8,8 @@
 }
 
 .nav-link:hover {
-    color: #ffff18 !important;
+    color: #e5c13e !important;
+    border-bottom: 4px solid #e5c13e;
 }
 
 .nav-link.active  {

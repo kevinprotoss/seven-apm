@@ -20,6 +20,10 @@ body {
   min-height: 500px;
 }
 
+.charpter-divider {
+  border-color: #e5c13e;
+}
+
 .divider {
   display: block;
   height: 1px;
