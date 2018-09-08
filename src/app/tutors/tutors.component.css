@@ -1,7 +1,3 @@
-.font-8p {
-    font-size: 8px;
-}
-
 .overflow {
     top: 50%;
     left: 50%;
@@ -29,4 +25,10 @@
     position: static;
     margin-top: 1rem;
     float: right;
+}
+
+.banner u {
+    text-decoration: none;
+    border-bottom: 4px solid #ffff6a;
+    padding-bottom: 5px;
 }

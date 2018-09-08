@@ -1,15 +1,5 @@
 <section id="college-list">
-  <div class="banner" [style.background-image]="'url(./assets/img/colleges/banner.jpg)'">
-    <h1 style="padding-top: 8em; padding-left: 6em; color: #3e3e96;">
-      MASTER OF ART. 7APM
-      <br>
-      <u style="text-decoration: underline #ffff6a;">A</u>CTION IS THE FOUNDATIONALKEY.
-      <br>
-      TO ALL SUCCESS.
-      <br>
-      ---- PABLO PICASSO
-    </h1>
-  </div>
+  <div class="banner" [style.background-image]="'url(./assets/img/colleges/banner.jpg)'"></div>
   <div class="w-70 mx-auto mt-5 mb-5 d-flex flex-column">
     <div class="input-group">
       <input class="form-control border border-warning" placeholder="输入关键字">
@@ -27,16 +17,16 @@
     </div>
   </div>
   <div class="w-70 mx-auto mt-5 mb-7 d-flex flex-column">
-    <div class="w-80 mx-auto d-flex flex-row justify-content-around">
-      <div class="text-center" (click)="selectRegion('us')">
+    <div class="w-80 mx-auto mb-4 d-flex flex-row justify-content-around">
+      <div class="text-center hover-text" [class.active]="region === 'us'" (click)="selectRegion('us')">
         美国<br>
         UNITED STATES
       </div>
-      <div class="text-center" (click)="selectRegion('uk')">
+      <div class="text-center hover-text" [class.active]="region === 'uk'" (click)="selectRegion('uk')">
         英国<br>
         UNITED KINDOM
       </div>
-      <div class="text-center" (click)="selectRegion('rest')">
+      <div class="text-center hover-text" [class.active]="region === 'rest'" (click)="selectRegion('rest')">
         其他<br>
         OTHERS
       </div>
