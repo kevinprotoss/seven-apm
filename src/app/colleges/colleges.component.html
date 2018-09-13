@@ -1,5 +1,5 @@
 <section id="college-list">
-  <div class="banner" [style.background-image]="'url(./assets/img/colleges/banner.jpg)'"></div>
+  <div class="banner" [style.background-image]="'url(http://static.motionsh.cn/images/colleges.jpg)'"></div>
   <div class="w-70 mx-auto mt-5 mb-5 d-flex flex-column">
     <div class="input-group">
       <input class="form-control border border-warning" placeholder="输入关键字">
@@ -33,9 +33,9 @@
     </div>
     <hr class="mb-0 border-warning">
     <div [ngSwitch]="region">
-      <img *ngSwitchCase="'us'" class="w-100" src="./assets/img/colleges/map/us.jpg"/>
-      <img *ngSwitchCase="'uk'" class="w-100" src="./assets/img/colleges/map/uk.jpg"/>
-      <img *ngSwitchCase="'rest'" class="w-100" src="./assets/img/colleges/map/others.jpg"/>
+      <img *ngSwitchCase="'us'" class="w-100" src="http://static.motionsh.cn/images/map_us.jpg"/>
+      <img *ngSwitchCase="'uk'" class="w-100" src="http://static.motionsh.cn/images/map_uk.jpg"/>
+      <img *ngSwitchCase="'rest'" class="w-100" src="http://static.motionsh.cn/images/map_rest.jpg"/>
     </div>
     <div *ngIf="(pagedColleges$ | async) as colleges">
       <div class="d-flex flex-column">

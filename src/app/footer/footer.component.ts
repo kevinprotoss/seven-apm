@@ -11,9 +11,7 @@ export class FooterComponent implements OnInit {
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  ngOnInit() {
-    this.backgroundImg = this.sanitizer.bypassSecurityTrustStyle('url(./assets/img/footer/bg.jpg)');
-  }
+  ngOnInit() { }
   
   getIframeSrc(){
     return this.sanitizer.bypassSecurityTrustResourceUrl('./assets/map.html');

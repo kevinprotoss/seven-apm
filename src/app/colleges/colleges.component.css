@@ -41,6 +41,7 @@
 
 .hover-text:hover,
 .hover-text.active {
+    cursor: pointer;
     color: #e5c13e;
 }
 
