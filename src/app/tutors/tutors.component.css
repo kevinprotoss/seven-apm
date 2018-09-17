@@ -21,12 +21,6 @@
     color: orange !important;
 }
 
-.swiper-pagination {
-    position: static;
-    margin-top: 1rem;
-    float: right;
-}
-
 .banner u {
     text-decoration: none;
     border-bottom: 4px solid #ffff6a;

@@ -37,13 +37,12 @@ export class TutorsComponent implements OnInit {
   ngOnInit() {
     const swiper = new Swiper('.swiper-container', {
       slidesPerView: 3,
-      slidesPerColumn: 3,
+      slidesPerColumn: 2,
       slidesPerGroup: 3,
       spaceBetween: 30,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
     });
   }

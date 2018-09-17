@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { SafeHtmlPipe } from './safe-html.pipe';
@@ -20,10 +21,10 @@ import { CollegesComponent } from './colleges/colleges.component';
 import { CollegeDetailComponent } from './college-detail/college-detail.component';
 import { MajorsComponent } from './majors/majors.component';
 import { MajorDetailComponent } from './major-detail/major-detail.component';
-import { ConsultingComponent } from './consulting/consulting.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +39,12 @@ import { AboutUsComponent } from './about-us/about-us.component';
     CollegeDetailComponent,
     MajorsComponent,
     MajorDetailComponent,
-    ConsultingComponent,
     CoursesComponent,
     CourseDetailComponent,
     AboutUsComponent,
     SafeHtmlPipe,
-    PaginationPipe
+    PaginationPipe,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +52,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HttpClientModule,
     FontAwesomeModule,
     ScrollToModule.forRoot(),
+    InfiniteScrollModule,
     AppRoutingModule
   ],
   providers: [],

@@ -4,11 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { PageScrollService } from '../page-scroll.service';
 
 @Component({
-  selector: 'app-consulting',
-  templateUrl: './consulting.component.html',
-  styleUrls: ['./consulting.component.css']
+  selector: 'app-info',
+  templateUrl: './info.component.html',
+  styleUrls: ['./info.component.css']
 })
-export class ConsultingComponent implements OnInit {
+export class InfoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute, 

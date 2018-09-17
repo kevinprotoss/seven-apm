@@ -10,7 +10,7 @@ import { CollegesComponent } from './colleges/colleges.component';
 import { CollegeDetailComponent } from './college-detail/college-detail.component';
 import { MajorsComponent } from './majors/majors.component';
 import { MajorDetailComponent } from './major-detail/major-detail.component';
-import { ConsultingComponent } from './consulting/consulting.component';
+import { InfoComponent } from './info/info.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'colleges/:id', component: CollegeDetailComponent, data: { name: 'collegeDetail' } },
   { path: 'majors', component: MajorsComponent, data: { name: 'majors' } },
   { path: 'majors/:id', component: MajorDetailComponent, data: { name: 'majorDetail' } },
-  { path: 'consulting', component: ConsultingComponent, data: { name: 'consulting' } },
+  { path: 'info', component: InfoComponent, data: { name: 'info' } },
   { path: 'about-us', component: AboutUsComponent, data: { name: 'aboutUs' } }
 ];
 
