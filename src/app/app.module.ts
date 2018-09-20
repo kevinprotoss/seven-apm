@@ -10,7 +10,7 @@ import { SafeHtmlPipe } from './safe-html.pipe';
 import { PaginationPipe } from './pagination.pipe';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { TutorsComponent } from './tutors/tutors.component';
 import { TutorDetailComponent } from './tutor-detail/tutor-detail.component';
@@ -25,6 +25,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { InfoComponent } from './info/info.component';
+import { FabComponent } from './fab/fab.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { InfoComponent } from './info/info.component';
     AboutUsComponent,
     SafeHtmlPipe,
     PaginationPipe,
-    InfoComponent
+    InfoComponent,
+    FabComponent
   ],
   imports: [
     BrowserModule,
