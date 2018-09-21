@@ -3,7 +3,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { SafeHtmlPipe } from './safe-html.pipe';
@@ -54,7 +53,6 @@ import { FabComponent } from './fab/fab.component';
     HttpClientModule,
     FontAwesomeModule,
     ScrollToModule.forRoot(),
-    InfiniteScrollModule,
     AppRoutingModule
   ],
   providers: [],

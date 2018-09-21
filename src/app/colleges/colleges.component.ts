@@ -31,7 +31,7 @@ export class CollegesComponent implements OnInit {
 
   ngOnInit() {
     this.colleges$ = this.collegeService.getColleges();
-    const swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.maps', {
       loop: true,
       // effect: 'fade'
     });
