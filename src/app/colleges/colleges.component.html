@@ -18,27 +18,36 @@
   </div>
   <div class="w-70 mx-auto mt-5 mb-7 d-flex flex-column">
     <div class="w-80 mx-auto mb-4 d-flex flex-row justify-content-around">
-      <div class="text-center hover-text" [class.active]="region === 'us'" (click)="selectRegion('us')">
+      <div class="text-center hover-text" [class.active]="realIndex === 0" (click)="slideToLoop(0)">
         美国<br>
         UNITED STATES
       </div>
-      <div class="text-center hover-text" [class.active]="region === 'uk'" (click)="selectRegion('uk')">
+      <div class="text-center hover-text" [class.active]="realIndex === 1" (click)="slideToLoop(1)">
         英国<br>
         UNITED KINDOM
       </div>
-      <div class="text-center hover-text" [class.active]="region === 'rest'" (click)="selectRegion('rest')">
+      <div class="text-center hover-text" [class.active]="realIndex === 2" (click)="slideToLoop(2)">
         其他<br>
         OTHERS
       </div>
     </div>
     <hr class="mb-0 border-warning">
-    <div [ngSwitch]="region">
-      <img *ngSwitchCase="'us'" class="w-100" src="http://static.motionsh.cn/images/map_us.jpg"/>
-      <img *ngSwitchCase="'uk'" class="w-100" src="http://static.motionsh.cn/images/map_uk.jpg"/>
-      <img *ngSwitchCase="'rest'" class="w-100" src="http://static.motionsh.cn/images/map_rest.jpg"/>
+    <!-- Swiper -->
+    <div class="w-100 swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="w-100" src="http://static.motionsh.cn/images/map_us.jpg"/>
+        </div>
+        <div class="swiper-slide">
+          <img class="w-100" src="http://static.motionsh.cn/images/map_uk.jpg"/>
+        </div>
+        <div class="swiper-slide">
+          <img class="w-100" src="http://static.motionsh.cn/images/map_rest.jpg"/>
+        </div>
+      </div>
     </div>
     <div *ngIf="(pagedColleges$ | async) as colleges">
-      <div class="d-flex flex-column">
+      <div id="college-page" class="d-flex flex-column">
         <div *ngFor="let college of colleges[currentPage]">
           <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
             <div class="mr-3 w-40">
@@ -69,11 +78,11 @@
         </div>
       </div>
       <div class="mt-4 d-flex flex-row flex-wrap justify-content-end align-items-center">
-        <span *ngIf="currentPage > 0; else hidden" class="mx-4 bg-transparent border-bottom border-right border-dark left" (click)="currentPage=currentPage-1"></span>
-        <span *ngFor="let page of colleges | pagination" class="dot mx-4 rounded bg-dark" [class.active]="page === currentPage" (click)="currentPage=page">
+        <span *ngIf="currentPage > 0; else hidden" class="mx-4 bg-transparent border-bottom border-right border-dark left" (click)="previousPage()"></span>
+        <span *ngFor="let page of colleges | pagination" class="dot mx-4 rounded bg-dark" [class.active]="page === currentPage" (click)="gotoPage(page)">
           {{page+1}}
         </span>
-        <span *ngIf="currentPage < colleges.length - 1; else hidden" class="mx-4 bg-transparent border-bottom border-right border-dark right" (click)="currentPage=currentPage+1"></span>
+        <span *ngIf="currentPage < colleges.length - 1; else hidden" class="mx-4 bg-transparent border-bottom border-right border-dark right" (click)="nextPage()"></span>
         <ng-template #hidden>
           <span class="mx-4 bg-transparent right"></span>
         </ng-template>

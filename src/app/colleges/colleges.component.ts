@@ -6,6 +6,7 @@ import { chunk } from 'lodash';
 
 import { College } from '../college';
 import { CollegeService } from '../college.service';
+import { PageScrollService } from '../page-scroll.service';
 
 @Component({
   selector: 'app-colleges',
@@ -18,14 +19,27 @@ export class CollegesComponent implements OnInit {
   private _collegesInUS$: Observable<College[][]>;
   private _collegesInUK$: Observable<College[][]>;
   private _collegesInRest$: Observable<College[][]>;
-  region: string = 'us';
   pageSize: number = 4;
   currentPage: number = 0;
+  swiper: any;
+  realIndex: number = 0;
 
-  constructor(private collegeService: CollegeService) { }
+  constructor(
+    private collegeService: CollegeService,
+    private pageScrollService: PageScrollService) {
+  }
 
   ngOnInit() {
     this.colleges$ = this.collegeService.getColleges();
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      // effect: 'fade'
+    });
+    swiper.on('slideChange', () => {
+      this.realIndex = swiper.realIndex;
+      this.currentPage = 0;
+    });
+    this.swiper = swiper;
   }
   
   set colleges$(values$: Observable<College[]>) {
@@ -45,19 +59,33 @@ export class CollegesComponent implements OnInit {
   }
   
   get pagedColleges$(): Observable<College[][]> {
-    switch(this.region) {
-      case 'rest':
+    switch(this.realIndex) {
+      case 2:
         return this._collegesInRest$;
-      case 'uk':
+      case 1:
         return this._collegesInUK$;
-      case 'us':
+      case 0:
       default:
         return this._collegesInUS$;
     }
   }
 
-  selectRegion(region: string) {
-    this.region = region;
-    this.currentPage = 0;
+  slideToLoop(index: number) {
+    this.swiper.slideToLoop(index);
+  }
+  
+  gotoPage(page: number) {
+    this.currentPage = page;
+    this.pageScrollService.triggerScrollTo('#college-page');
+  }
+  
+  nextPage() {
+    this.currentPage += 1;
+    this.pageScrollService.triggerScrollTo('#college-page');
+  }
+  
+  previousPage() {
+    this.currentPage += 1;
+    this.pageScrollService.triggerScrollTo('#college-page');
   }
 }
