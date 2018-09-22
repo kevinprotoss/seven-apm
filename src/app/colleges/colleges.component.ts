@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { chunk } from 'lodash';
 
 import { College } from '../college';
@@ -26,20 +27,36 @@ export class CollegesComponent implements OnInit {
 
   constructor(
     private collegeService: CollegeService,
-    private pageScrollService: PageScrollService) {
+    private pageScrollService: PageScrollService,
+    private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.colleges$ = this.collegeService.getColleges();
-    const swiper = new Swiper('.maps', {
-      loop: true,
-      // effect: 'fade'
+    this.route.queryParams.subscribe(params => {
+      switch (params.country) {
+        case 'rest':
+          this.realIndex = 2;
+          break;
+        case 'uk':
+          this.realIndex = 1;
+          break;
+        case 'us':
+        default:
+          this.realIndex = 0;
+          break;
+      }
+      const swiper = new Swiper('.maps', {
+        initialSlide: this.realIndex,
+        loop: true,
+        // effect: 'fade'
+      });
+      swiper.on('slideChange', () => {
+        this.realIndex = swiper.realIndex;
+        this.currentPage = 0;
+      });
+      this.swiper = swiper;
     });
-    swiper.on('slideChange', () => {
-      this.realIndex = swiper.realIndex;
-      this.currentPage = 0;
-    });
-    this.swiper = swiper;
   }
   
   set colleges$(values$: Observable<College[]>) {
@@ -85,7 +102,7 @@ export class CollegesComponent implements OnInit {
   }
   
   previousPage() {
-    this.currentPage += 1;
+    this.currentPage -= 1;
     this.pageScrollService.triggerScrollTo('#college-page');
   }
 }

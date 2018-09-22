@@ -58,3 +58,8 @@
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
+
+.nostyle {
+  color: inherit;
+  text-decoration: inherit;
+}

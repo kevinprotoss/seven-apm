@@ -216,7 +216,12 @@
     <div class="mt-5">
       <b>按条件筛选</b><br>
       <span>
-        <b>国家</b> 全部 美国 英国 欧洲 其他&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <b>国家</b>&nbsp;
+        <a routerLink="/colleges" class="nostyle">全部</a>&nbsp;
+        <a routerLink="/colleges" [queryParams]="{ country: 'us' }" class="nostyle">美国</a>&nbsp;
+        <a routerLink="/colleges" [queryParams]="{ country: 'uk' }" class="nostyle">英国</a>&nbsp;
+        <a routerLink="/colleges" class="nostyle">欧洲</a>&nbsp;
+        <a routerLink="/colleges" [queryParams]="{ country: 'rest' }" class="nostyle">其他</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <b>学历</b> 全部 本科 研究生
       </span>
     </div>
