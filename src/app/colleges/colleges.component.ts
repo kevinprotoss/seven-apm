@@ -100,21 +100,22 @@ export class CollegesComponent implements OnInit {
   }
   
   nextPage() {
-    this.currentPage += 1;
+    // this.currentPage += 1;
+    this.index += 1;
+    this.gotoPage(this.index);
     this.pageScrollService.triggerScrollTo('#college-page');
   }
   
   previousPage() {
-    this.currentPage -= 1;
+    // this.currentPage -= 1;
+    this.index -= 1;
+    this.gotoPage(this.index);
     this.pageScrollService.triggerScrollTo('#college-page');
   }
-  
-  count(total: number) {
-    return ( this.index + 1 ) + ' / ' + total;
-  }
-  
-  slide(total: number, offset: number) {
-    this.index = Math.min( Math.max( this.index + offset, 0 ), total - 1 );
-    this.gotoPage(this.index);
-  }
+
+  // slide(total: number, offset: number) {
+  //   console.log('slide');
+  //   this.index = Math.min( Math.max( this.index + offset, 0 ), total - 1 );
+  //   this.gotoPage(this.index);
+  // }
 }
