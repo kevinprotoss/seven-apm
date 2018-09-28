@@ -24,8 +24,6 @@ export class CollegesComponent implements OnInit {
   currentPage: number = 0;
   swiper: any;
   realIndex: number = 0;
-  
-  index: number = 0;
 
   constructor(
     private collegeService: CollegeService,
@@ -56,7 +54,6 @@ export class CollegesComponent implements OnInit {
       swiper.on('slideChange', () => {
         this.realIndex = swiper.realIndex;
         this.currentPage = 0;
-        this.index = 0;
       });
       this.swiper = swiper;
     });
@@ -96,26 +93,15 @@ export class CollegesComponent implements OnInit {
   
   gotoPage(page: number) {
     this.currentPage = page;
-    this.pageScrollService.triggerScrollTo('#college-page');
   }
   
   nextPage() {
-    // this.currentPage += 1;
-    this.index += 1;
-    this.gotoPage(this.index);
+    this.gotoPage(this.currentPage + 1);
     this.pageScrollService.triggerScrollTo('#college-page');
   }
   
   previousPage() {
-    // this.currentPage -= 1;
-    this.index -= 1;
-    this.gotoPage(this.index);
+    this.gotoPage(this.currentPage - 1);
     this.pageScrollService.triggerScrollTo('#college-page');
   }
-
-  // slide(total: number, offset: number) {
-  //   console.log('slide');
-  //   this.index = Math.min( Math.max( this.index + offset, 0 ), total - 1 );
-  //   this.gotoPage(this.index);
-  // }
 }

@@ -80,9 +80,9 @@
       </div>
       <div class="mt-4 mr-4 d-flex flex-row flex-wrap justify-content-end align-items-center">
         <div class="mt-2 w-20 paginate-bar">
-          <div class="counter">{{index + 1}} / {{colleges.length}}</div>
-          <button class="paginate left" [attr.data-state]="index === 0 ? 'disabled' : ''" [disabled]="index === 0" (click)="previousPage()"><i></i><i></i></button>
-          <button class="paginate right" [attr.data-state]="index === colleges.length - 1 ? 'disabled' : ''" [disabled]="index === colleges.length - 1" (click)="nextPage()"><i></i><i></i></button>
+          <div class="counter">{{currentPage + 1}} / {{colleges.length}}</div>
+          <button class="paginate left" [attr.data-state]="currentPage === 0 ? 'disabled' : ''" [disabled]="currentPage === 0" (click)="previousPage()"><i></i><i></i></button>
+          <button class="paginate right" [attr.data-state]="currentPage === colleges.length - 1 ? 'disabled' : ''" [disabled]="currentPage === colleges.length - 1" (click)="nextPage()"><i></i><i></i></button>
         </div>
       </div>
     </div>
