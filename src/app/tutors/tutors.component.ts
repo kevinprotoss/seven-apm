@@ -39,7 +39,6 @@ export class TutorsComponent implements OnInit {
       slidesPerView: 3,
       slidesPerColumn: 2,
       slidesPerGroup: 3,
-      spaceBetween: 30,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

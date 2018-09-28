@@ -3,6 +3,16 @@
     min-height: 500px;
 }
 
+#site-header > nav {
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    #site-header > nav {
+        width: 75%;
+    }
+}
+
 .nav-link {
     color: black !important;
 }
@@ -14,4 +24,15 @@
 
 .nav-link.active  {
     border-bottom: 4px solid #e5c13e;
+}
+
+.brand {
+    text-align: justify;
+    height: 1.5rem;
+}
+
+.brand:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
 }

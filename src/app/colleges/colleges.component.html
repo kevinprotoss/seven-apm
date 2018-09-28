@@ -55,21 +55,19 @@
           <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">
             <div class="mr-3 w-40">
               <a [routerLink]="'/colleges/' + college.id">
-                <img [src]="college.thumbnailUrl" class="w-100"/>
+                <img [src]="college.thumbnailUrl" class="w-100 image-border"/>
               </a>
             </div>
-            <div class="ml-3">
-              留学预算：{{college.tuition.totalFee}}<br>
+            <div class="ml-3 font-weight-bold">
+              <span class="text-black-50">留学预算：</span>{{college.tuition.totalFee}}<br>
               <ng-container *ngIf="college.abstract.requirement">
-                语言成绩：{{college.abstract.requirement}}<br>
+                <span class="text-black-50">语言成绩：</span>{{college.abstract.requirement}}<br>
               </ng-container>
               <ng-container *ngIf="college.abstract.deadline">
-                申请截止：{{college.abstract.deadline}}<br>
+                <span class="text-black-50">申请截止：</span>{{college.abstract.deadline}}<br>
               </ng-container>
-              优质专业：
-              <ng-container *ngFor="let major of college.popularMajors; last as isLast">
-                {{isLast ? major.name : major.name + ' / '}}
-              </ng-container>
+              <span class="text-black-50">优质专业：</span>
+              <ng-container *ngFor="let major of college.popularMajors; last as isLast">{{isLast ? major.name : major.name + ' / '}}</ng-container>
               ...
             </div>
             <div class="w-100 mt-2 d-flex justify-content-end">
@@ -80,15 +78,12 @@
           <hr class="divider">
         </div>
       </div>
-      <div class="mt-4 d-flex flex-row flex-wrap justify-content-end align-items-center">
-        <span *ngIf="currentPage > 0; else hidden" class="mx-4 bg-transparent border-bottom border-right border-dark left" (click)="previousPage()"></span>
-        <span *ngFor="let page of colleges | pagination" class="dot mx-4 rounded bg-dark" [class.active]="page === currentPage" (click)="gotoPage(page)">
-          {{page+1}}
-        </span>
-        <span *ngIf="currentPage < colleges.length - 1; else hidden" class="mx-4 bg-transparent border-bottom border-right border-dark right" (click)="nextPage()"></span>
-        <ng-template #hidden>
-          <span class="mx-4 bg-transparent right"></span>
-        </ng-template>
+      <div class="mt-4 mr-4 d-flex flex-row flex-wrap justify-content-end align-items-center">
+        <div class="mt-2 w-20 paginate-bar">
+          <div class="counter" [innerHtml]="count(colleges.length)"></div>
+          <button class="paginate left" [attr.data-state]="index === 0 ? 'disabled' : ''" (click)="slide(colleges.length, -1)"><i></i><i></i></button>
+          <button class="paginate right" [attr.data-state]="index === colleges.length - 1 ? 'disabled' : ''" (click)="slide(colleges.length, 1)"><i></i><i></i></button>
+        </div>
       </div>
     </div>
   </div>
