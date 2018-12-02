@@ -10,7 +10,7 @@ import { College } from './college';
 })
 export class CollegeService {
   
-  private url = 'http://static.motionsh.cn/data/colleges.json';
+  private url = 'http://static.7apm.cn/data/colleges.json';
 
   constructor(private http: HttpClient) { }
   

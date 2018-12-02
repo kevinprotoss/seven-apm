@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-import { HttpClientModule }    from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { PaginationPipe } from './pagination.pipe';
@@ -52,6 +53,7 @@ import { FabComponent } from './fab/fab.component';
     BrowserAnimationsModule,
     HttpClientModule,
     FontAwesomeModule,
+    NgxSpinnerModule,
     ScrollToModule.forRoot(),
     AppRoutingModule
   ],

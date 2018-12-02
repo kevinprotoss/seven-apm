@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { chunk } from 'lodash';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 import { College } from '../college';
 import { CollegeService } from '../college.service';
@@ -28,6 +29,7 @@ export class CollegesComponent implements OnInit {
   constructor(
     private collegeService: CollegeService,
     private pageScrollService: PageScrollService,
+    private spinner: NgxSpinnerService,
     private route: ActivatedRoute) {
   }
 
@@ -46,6 +48,10 @@ export class CollegesComponent implements OnInit {
           this.realIndex = 0;
           break;
       }
+      this.pagedColleges$.subscribe(() => {
+        // console.log('set spinner');
+        this.spinner.show();
+      });
       const swiper = new Swiper('.maps', {
         initialSlide: this.realIndex,
         loop: true,

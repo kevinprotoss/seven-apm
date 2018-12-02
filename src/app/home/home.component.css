@@ -16,6 +16,17 @@
   text-decoration: inherit;
 }
 
+.banner u {
+  text-decoration: none;
+  border-bottom: 4px solid #ffff6a;
+  padding-bottom: 1px;
+}
+
+.topbar {
+  background-position: center;
+  background-size: cover;
+}
+
 .image-border {
   border: 2px solid transparent;
 }

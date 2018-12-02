@@ -1,5 +1,5 @@
 <section id="college-list">
-  <div class="banner" [style.background-image]="'url(http://static.motionsh.cn/images/colleges.jpg)'"></div>
+  <div class="banner" [style.background-image]="'url(http://static.7apm.cn/images/colleges.jpg)'"></div>
   <div class="w-70 mx-auto mt-5 mb-5 d-flex flex-column">
     <div class="input-group">
       <input class="form-control border border-warning" placeholder="输入关键字">
@@ -39,17 +39,21 @@
     <div class="w-100 swiper-container maps">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img class="w-100" src="http://static.motionsh.cn/images/map_us.jpg"/>
+          <img class="w-100" src="http://static.7apm.cn/images/map_us.jpg"/>
         </div>
         <div class="swiper-slide">
-          <img class="w-100" src="http://static.motionsh.cn/images/map_uk.jpg"/>
+          <img class="w-100" src="http://static.7apm.cn/images/map_uk.jpg"/>
         </div>
         <div class="swiper-slide">
-          <img class="w-100" src="http://static.motionsh.cn/images/map_rest.jpg"/>
+          <img class="w-100" src="http://static.7apm.cn/images/map_rest.jpg"/>
         </div>
       </div>
     </div>
     <div *ngIf="(pagedColleges$ | async) as colleges">
+      <ngx-spinner 
+        bdColor="rgba(51,51,51,0.8)"
+        type="ball-clip-rotate">
+      </ngx-spinner>
       <div id="college-page" class="d-flex flex-column">
         <div *ngFor="let college of colleges[currentPage]">
           <div class="w-90 mx-auto mt-3 d-flex flex-row flex-wrap justify-content-start align-items-center">

@@ -10,7 +10,7 @@ import { Major } from './major';
 })
 export class MajorService {
 
-  private url = 'http://static.motionsh.cn/data/majors.json';
+  private url = 'http://static.7apm.cn/data/majors.json';
 
   constructor(private http: HttpClient) { }
   
